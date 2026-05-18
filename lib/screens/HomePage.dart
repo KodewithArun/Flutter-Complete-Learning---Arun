@@ -10,11 +10,12 @@ class HomePage extends StatelessWidget {
         title: Text("Home Page"),
       ),
       body: Center(
-        child:IconButton(onPressed: (){
-          print("Button Pressed");
-        }, 
-        icon: Icon(Icons.home)),
-         
+        child: ElevatedButton(
+          onPressed: () {
+            print("Button Pressed");
+          },
+          child: Text("Home"),
+        ),
       ),
     );
   }
