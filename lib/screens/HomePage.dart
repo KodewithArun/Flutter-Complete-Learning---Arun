@@ -10,14 +10,28 @@ class HomePage extends StatelessWidget {
         title: Text("Home Page"),
       ),
       body: Center(
-//         child: Image.network(
-//   "https://picsum.photos/300",
-// )
-// child: Image.asset("assets/images/superman.png",height:200,width: 300,),
-child: CircleAvatar(
-  radius: 100,
-  backgroundImage: AssetImage("assets/images/superman.png")
-),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.red,
+            ),
+            SizedBox(width: 20,),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.green,
+            ),
+            SizedBox(width: 20,),
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.blue,
+            ),
+          ],
+        )
       ),
     );
   }
