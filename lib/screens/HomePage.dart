@@ -6,26 +6,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home Page")),
+      appBar: AppBar(
+        title: Text("Home Page"),
+      ),
       body: Center(
-        child: Container(
-          width: 300,
-          height: 180,
-
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-
-            boxShadow: [BoxShadow(blurRadius: 10, offset: Offset(0, 5))],
-          ),
-
-          child: Center(
-            child: Text(
-              "Login Card",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
+        child: Text("Welcome to Home Page", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.blue),),
       ),
     );
   }
