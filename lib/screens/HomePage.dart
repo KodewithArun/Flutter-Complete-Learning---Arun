@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
         title: Text("Home Page"),
       ),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
@@ -18,13 +18,13 @@ class HomePage extends StatelessWidget {
               width: 100,
               color: Colors.red,
             ),
-            SizedBox(width: 20,),
+            SizedBox(height: 20,),
             Container(
               height: 100,
               width: 100,
               color: Colors.green,
             ),
-            SizedBox(width: 20,),
+            SizedBox(height: 20,),
             Container(
               height: 100,
               width: 100,
