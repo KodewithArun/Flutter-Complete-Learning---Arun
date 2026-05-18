@@ -10,12 +10,14 @@ class HomePage extends StatelessWidget {
         title: Text("Home Page"),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            print("Button Pressed");
-          },
-          child: Text("Home"),
-        ),
+//         child: Image.network(
+//   "https://picsum.photos/300",
+// )
+// child: Image.asset("assets/images/superman.png",height:200,width: 300,),
+child: CircleAvatar(
+  radius: 100,
+  backgroundImage: AssetImage("assets/images/superman.png")
+),
       ),
     );
   }
