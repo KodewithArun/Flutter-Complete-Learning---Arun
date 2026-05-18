@@ -9,33 +9,35 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home Page"),
       ),
-      body: Expanded(
-        child: ListView(
-          physics: BouncingScrollPhysics(),
-          children: [
-            Container(
-              height: 200,
-              color: Colors.red,
-            ),
-            Container(
-              height: 200,
-              color: Colors.green,
-            ),
-            Container(
-              height: 200,
-              color: Colors.blue,
-            ),
-            Container(
-              height: 200,
-              color: Colors.yellow,
-            ),
-            Container(
-              height: 200,
-              color: Colors.orange,
-            ),
-          ],
-        ),
-      ),
+      body: StudentList(),
+    );
+  }
+}
+
+class StudentList extends StatelessWidget {
+  final List<String> students = [
+    'Alice',
+    'Bob',
+    'Charlie',
+    'David',
+    'Eve',
+    'Faythe',
+    'Grace',
+    'Heidi',
+    'Ivan',
+    'Judy',
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: students.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          leading: CircleAvatar(child: Text(students[index][0])),
+          title: Text(students[index]),
+        );
+      },
     );
   }
 }
