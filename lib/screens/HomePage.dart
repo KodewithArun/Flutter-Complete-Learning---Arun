@@ -9,28 +9,33 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Home Page"),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            title: Text("Item 1"),
-            subtitle: Text("Description for Item 1"),
-            leading: Icon(Icons.star),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          ListTile(
-            title: Text("Item 2"),
-            subtitle: Text("Description for Item 2"),
-            leading: Icon(Icons.star_border),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          ListTile(
-            title: Text("Item 3"),
-            subtitle: Text("Description for Item 3"),
-            leading: Icon(Icons.star_half),
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-        ],
-      )
+      body: Expanded(
+        child: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            Container(
+              height: 200,
+              color: Colors.red,
+            ),
+            Container(
+              height: 200,
+              color: Colors.green,
+            ),
+            Container(
+              height: 200,
+              color: Colors.blue,
+            ),
+            Container(
+              height: 200,
+              color: Colors.yellow,
+            ),
+            Container(
+              height: 200,
+              color: Colors.orange,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
