@@ -10,28 +10,26 @@ class HomePage extends StatelessWidget {
         title: Text("Home Page"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.red,
-            ),
-            SizedBox(height: 20,),
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.green,
-            ),
-            SizedBox(height: 20,),
-            Container(
-              height: 100,
-              width: 100,
+        child: InkWell(
+         
+          onTap: () {
+            print("Tapped");
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
               color: Colors.blue,
             ),
-          ],
-        )
+            height: 50,
+            width: 150,
+            child: Center(
+              child: Text(
+                "Click Me",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
