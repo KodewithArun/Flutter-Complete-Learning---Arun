@@ -1,27 +1,47 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
-  final TextEditingController controller = TextEditingController();
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
+      appBar: AppBar(title: Text("Date & Time")),
+
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
-            TextField(controller: controller),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Hello ${controller.text}')),
-                );
-              },
-              child: const Text('Submit'),
+            Text(
+              "Current Date",
+
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+
+            SizedBox(height: 10),
+
+            Text(
+              "${now.day}/${now.month}/${now.year}",
+
+              style: TextStyle(fontSize: 22),
+            ),
+
+            SizedBox(height: 30),
+
+            Text(
+              "Current Time",
+
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+
+            SizedBox(height: 10),
+
+            Text(
+              "${now.hour}:${now.minute}:${now.second}",
+
+              style: TextStyle(fontSize: 22),
             ),
           ],
         ),
