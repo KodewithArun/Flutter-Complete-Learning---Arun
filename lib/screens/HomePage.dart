@@ -7,16 +7,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Home Page")),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Container(height: 100, width: 100, color: Colors.red),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(100),
           ),
-          Expanded(
-            child: Container(height: 100, width: 100, color: Colors.green),
+          child: CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage("assets/images/superman.png"),
           ),
-        ],
+        ),
       ),
     );
   }
