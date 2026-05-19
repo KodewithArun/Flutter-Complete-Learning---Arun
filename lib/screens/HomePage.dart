@@ -6,38 +6,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page"),
+      appBar: AppBar(title: Text("Home Page")),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(height: 100, width: 100, color: Colors.red),
+          ),
+          Expanded(
+            child: Container(height: 100, width: 100, color: Colors.green),
+          ),
+        ],
       ),
-      body: StudentList(),
-    );
-  }
-}
-
-class StudentList extends StatelessWidget {
-  final List<String> students = [
-    'Alice',
-    'Bob',
-    'Charlie',
-    'David',
-    'Eve',
-    'Faythe',
-    'Grace',
-    'Heidi',
-    'Ivan',
-    'Judy',
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: students.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          leading: CircleAvatar(child: Text(students[index][0])),
-          title: Text(students[index]),
-        );
-      },
     );
   }
 }
