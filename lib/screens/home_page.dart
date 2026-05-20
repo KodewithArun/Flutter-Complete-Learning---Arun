@@ -5,46 +5,30 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
     return Scaffold(
-      appBar: AppBar(title: Text("Date & Time")),
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-
-          children: [
-            Text(
-              "Current Date",
-
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      appBar: AppBar(title: Text('Home Page')),
+      //  make a date picker simple body
+      body: Builder(
+        builder: (context) {
+          return Center(
+            child: ElevatedButton(
+              onPressed: () async {
+                DateTime? dateTime = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(2000),
+                  lastDate: DateTime(2100),
+                );
+                if (dateTime != null) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Selected date: $dateTime')),
+                  );
+                }
+              },
+              child: Text('Show Date Picker'),
             ),
-
-            SizedBox(height: 10),
-
-            Text(
-              "${now.day}/${now.month}/${now.year}",
-
-              style: TextStyle(fontSize: 22),
-            ),
-
-            SizedBox(height: 30),
-
-            Text(
-              "Current Time",
-
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            ),
-
-            SizedBox(height: 10),
-
-            Text(
-              "${now.hour}:${now.minute}:${now.second}",
-
-              style: TextStyle(fontSize: 22),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
