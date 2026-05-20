@@ -16,6 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         secondaryHeaderColor: Colors.orange,
+        appBarTheme: AppBarTheme(
+          backgroundColor: const Color.fromARGB(255, 255, 12, 12),
+          foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+        ),
       ),
       home: HomePage(),
     );
