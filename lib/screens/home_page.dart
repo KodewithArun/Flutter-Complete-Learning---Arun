@@ -7,28 +7,63 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Home Page')),
-      //  make a date picker simple body
-      body: Builder(
-        builder: (context) {
-          return Center(
-            child: ElevatedButton(
-              onPressed: () async {
-                DateTime? dateTime = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(2000),
-                  lastDate: DateTime(2100),
-                );
-                if (dateTime != null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Selected date: $dateTime')),
-                  );
-                }
-              },
-              child: Text('Show Date Picker'),
-            ),
-          );
-        },
+      body: GridView.count(
+        physics: BouncingScrollPhysics(),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: 2,
+        children: [
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 125, 36, 30),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 32, 182, 54),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 30, 115, 138),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 22, 40, 106),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 121, 67, 81),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 236, 123, 2),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 125, 36, 30),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 32, 182, 54),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 30, 115, 138),
+          ),
+          Container(
+            height: 200,
+            width: 200,
+            color: const Color.fromARGB(255, 22, 40, 106),
+          ),
+        ],
       ),
     );
   }
