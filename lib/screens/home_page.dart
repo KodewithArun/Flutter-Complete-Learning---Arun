@@ -7,14 +7,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Home Page')),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
-              'Welcome to the Home Page!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      body: RichText(
+        text: TextSpan(
+          text:
+              'Flutter is Google’s mobile app SDK for crafting high-quality native interfaces on iOS and Android in record time.',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+          children: [
+            TextSpan(
+              text:
+                  '\n\nIt allows you to build beautiful apps with a single codebase.',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.normal,
+                color: Colors.grey[700],
+              ),
             ),
           ],
         ),
