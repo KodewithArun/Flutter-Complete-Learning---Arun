@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_page.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         secondaryHeaderColor: Colors.orange,
         appBarTheme: AppBarTheme(
-          backgroundColor: const Color.fromARGB(255, 255, 12, 12),
-          foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: Color.fromARGB(255, 255, 12, 12),
+          foregroundColor: Color.fromARGB(255, 255, 255, 255),
         ),
       ),
-      home: HomePage(),
+      home: const WelcomeScreen(),
     );
   }
 }
