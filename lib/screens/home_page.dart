@@ -9,13 +9,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: const Text("Home Page")),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 255, 12, 12),
-              Color.fromARGB(255, 255, 255, 255),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+          gradient: RadialGradient(
+            colors: [Colors.red, Colors.white],
+            center: Alignment.center,
+            radius: 0.8,
           ),
         ),
       ),
