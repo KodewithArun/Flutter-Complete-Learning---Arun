@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
+import 'package:flutter_application_1/screens/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Color.fromARGB(255, 255, 255, 255),
         ),
       ),
-      home: const WelcomeScreen(),
+      home: HomePage(),
     );
   }
 }
