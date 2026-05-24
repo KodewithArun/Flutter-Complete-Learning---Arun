@@ -10,11 +10,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   double boxSize = 800;
   Color boxColor = Colors.blue;
+  double boxOpacity = 1.0;
 
   void animateBox() {
     setState(() {
       boxSize = boxSize == 800 ? 200 : 800;
       boxColor = boxColor == Colors.blue ? Colors.red : Colors.blue;
+      boxOpacity = boxOpacity == 1.0 ? 0.0 : 1.0;
     });
   }
 
@@ -23,12 +25,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: const Text('AnimatedContainer')),
       body: Center(
-        child: AnimatedContainer(
-          duration: const Duration(seconds: 1),
+        child: AnimatedOpacity(
+          duration: const Duration(milliseconds: 800),
           curve: Curves.easeInOut,
-          width: boxSize,
-          height: boxSize,
-          color: boxColor,
+          opacity: boxOpacity,
+          child: AnimatedContainer(
+            duration: const Duration(seconds: 1),
+            curve: Curves.easeInOut,
+            width: boxSize,
+            height: boxSize,
+            color: boxColor,
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
