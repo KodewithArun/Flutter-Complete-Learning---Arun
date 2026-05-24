@@ -8,27 +8,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Alignment alignment = Alignment.topLeft;
+  var arrIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedAlign(
-        duration: Duration(seconds: 1),
-        curve: Curves.easeInOutCubic,
-        alignment: alignment,
-        child: Container(width: 80, height: 80, color: Colors.green),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            alignment =
-                alignment == Alignment.topLeft
-                    ? Alignment.bottomRight
-                    : Alignment.topLeft;
-          });
-        },
-        child: Icon(Icons.open_with),
+      appBar: AppBar(title: Text("Home Page")),
+      body: ListWheelScrollView(
+        itemExtent: 250,
+        children:
+            arrIndex
+                .map(
+                  (e) => Container(
+                    height: 100,
+                    width: double.infinity,
+                    color: Colors.primaries[e % Colors.primaries.length],
+                    child: Center(
+                      child: Text(
+                        "Item $e",
+                        style: TextStyle(fontSize: 24, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
       ),
     );
   }
